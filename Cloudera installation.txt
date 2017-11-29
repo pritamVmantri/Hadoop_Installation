@@ -1,0 +1,32 @@
+Requirements:
+Firstly you need to have VirtualBox installed in your system.
+
+Step 1: To download cloudera click on any of following link.
+
+https://www.cloudera.com 
+Select quickstart vms from download tab.
+
+OR
+
+https://www.cloudera.com/downloads/quickstart_vms/5-12.html 
+
+Go to the following website and choose platform as virtualbox, vmware, kvm or docker image as your requirement. 
+I will prefer virtualbox as I’m using that one. After selecting platform login to cloudera.
+
+Step 2: Now install cloudera
+
+Create a new virtual machine and give a name to OS
+Provide RAM, virtual hard drive space, video acceleration etc stuff in setting tab
+Select Memory Size as 2GB (or half of your RAM memory) and click Next
+Select a option “create a virtual hard drive now”
+Select “Use an existing virtual hard drive file” and select a file with extension “.vmdk” or “.ovf” from unzipped cloudera 
+And now start installing OS & provide credentials to your OS
+Install vmware tool to enable sharing between the host OS and guest OS. 
+Enable shared folder from “virtual machine settings” tab. Or right command for vboxsf (take reference of Google).
+
+Step 3: Login to Cloudera
+
+System redirects you to the index page of Cloudera
+Select Cloudera Manager and Agree to the information assurance policy
+ Login to Cloudera Manager as admin. Password is admin
+We can see all the services running on our single node cluster
