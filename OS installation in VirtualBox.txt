@@ -1,0 +1,43 @@
+You can install on your host operating system but it is good to install virtually as you are learner. 
+It prevent from formatting your OS in future. Because in linux every installation do changes in system. 
+And it reduce the headache of reinstalling, uninstalling of Software and formatting OS.
+
+STEP 1: Download VMWare Player or VMWare Workstation or VirtualBox
+
+You may download VMWare Workstation from below location
+https://my.vmware.com/en/web/vmware/info/slug/desktop_end_user_computing/vmware_workstation_pro/14_0 
+
+OR
+
+You may download Virtual-box from below location
+https://www.virtualbox.org/wiki/Downloads 
+
+After installing it download CentOS or Ubuntu for which you suitable
+
+STEP 2: Download stable version of Operating System to install virtually
+
+To download CentOS DVD iso use following link
+http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso 
+
+To download different variants of CentOS use below link
+https://wiki.centos.org/Download 
+
+OR
+
+You can download Ubuntu Desktop from following location
+https://www.ubuntu.com/download/desktop 
+
+STEP 3: Install OS virtually.
+
+You can take Google as reference
+
+OR
+
+Create a new virtual machine and give a name to OS
+Provide RAM, virtual hard drive space, video acceleration etc stuff in setting tab
+Select Memory Size as 2GB (or half of your RAM memory) and click Next
+Select a option “create a virtual hard drive now”
+Select “Use an existing virtual hard drive file” and provide the location of your OS img/iso file
+And now start installing OS & provide credentials to your OS
+Install vmware tool to enable sharing between the host OS and guest OS
+Enable shared folder from “virtual machine settings” tab 
