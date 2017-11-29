@@ -1,0 +1,34 @@
+#Installation of JAVA for ubuntu OS
+
+Download latest java version
+http://www.oracle.com/technetwork/java/javase/downloads/jre9-downloads-3848532.html 
+
+Download zipped tarball file and extract it using below command
+$ sudo tar -zxvf [name_of_your_jdk_version]
+E.g. 
+$ sudo tar -zxvf jdk-8u73-linux-x64.tar.gz
+
+Move the extracted folder to /usr/local directory to avoid ambiguity of user developed and predefined java program 
+$ sudo mv jdk_extracted_file dest_folder
+E.g. 
+$ sudo mv jdk-8u73-linux-x64/ /usr/local/java
+or --sudo mv jdk1.8.0_73/ /usr/local/java
+
+Export the Java_home and path to access jars globally so you can run java program from any location
+$ sudo nano ~/.bashrc 
+#----------------------------------------------------------------------------
+# Java_home 
+export JAVA_HOME=/usr/local/java
+export PATH=$JAVA_HOME/bin:$PATH
+#----------------------------------------------------------------------------
+
+Refresh your terminal by using following command 
+$ source ~/.bashrc
+OR
+close the existing terminal and open a new terminal
+
+To check Java properly installed or not run the following command
+$ java -version
+
+If you face any issues while installing the JDK, please check the JDK version you have download and the command that you used
+If it shows some errors related to missing packages, just ignore them
