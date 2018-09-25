@@ -1,0 +1,16 @@
+$ Download Maven http://maven.apache.org/download.cgi
+
+$ sudo tar zxvf Desktop/software/hadoop/apache-maven-3.3.9-bin.tar.gz
+
+$ sudo mv apache-maven-3.3.9/ /usr/local/maven
+
+$ sudo nano ~/.bashrc
+
+#----------------------------------------------------------------------------
+export MAVEN_HOME=/usr/local/maven
+export PATH=$MAVEN_HOME/bin:$PATH
+#----------------------------------------------------------------------------
+
+$ source ~/.bashrc
+
+$ mvn -v

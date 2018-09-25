@@ -1,0 +1,18 @@
+$ sudo tar -zxvf apache-flume-1.5.2-bin.tar.gz
+
+$ sudo mv apache-flume-1.5.2-bin /usr/local/flume
+
+$ sudo nano ~/.bashrc
+
+#----------------------------------------------------------------------------
+export FLUME_HOME=/usr/local/flume
+export FLUME_CONF_DIR=$FLUME_HOME/conf
+export FLUME_CLASS_PATH=$FLUME_CONF_DIR
+export PATH=$FLUME_HOME/bin:$PATH
+#----------------------------------------------------------------------------
+
+$ source ~/.bashrc
+
+$ flume-ng -help
+
+$ flume-ng version

@@ -1,0 +1,25 @@
+$ Download zookeeper http://www.apache.org/dyn/closer.cgi/zookeeper/
+
+$ sudo tar -zxvf Desktop/software/hadoop/zookeeper-3.4.9.tar.gz 
+
+$ sudo mv zookeeper-3.4.9/ /usr/local/zookeeper 
+
+$ sudo nano ~/.bashrc
+
+#----------------------------------------------------------------------------
+export ZK_HOME=/usr/local/zookeeper
+export PATH=$ZK_HOME/bin:$PATH
+export ZK_CONF_DIR=$ZK_HOME/conf
+#----------------------------------------------------------------------------
+
+$ source ~/.bashrc
+
+# if you have zoo.cfg file
+
+$ zkServer.sh start
+
+# if not or you have one more zookeeper configuration file
+# then go for the full path 
+# Try to run Zookeeper with the config file full path
+
+$ zkServer.sh start /etc/zookeeper/conf/zoo_sample.cfg

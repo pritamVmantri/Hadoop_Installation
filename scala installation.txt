@@ -1,0 +1,16 @@
+# Download scala-2.12.0.tgz from http://www.scala-lang.org/download/
+
+$ sudo tar zxvf Desktop/software/hadoop/scala-2.12.0.tgz
+
+$ sudo mv scala-2.12.0 /usr/local/scala
+
+$ sudo nano ~/.bashrc
+
+#----------------------------------------------------------------------------
+export SCALA_HOME=/usr/local/scala
+export PATH=$SCALA_HOME/bin:$PATH
+#----------------------------------------------------------------------------
+
+$ source ~/.bashrc
+
+$ scala -version

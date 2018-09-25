@@ -1,0 +1,34 @@
+$ Download Sqoop http://apache.org/dyn/closer.cgi/sqoop/1.99.5
+
+$ Download MySQL Connector/J https://dev.mysql.com/downloads/connector/j/
+
+$ sudo tar -zxvf sqoop-1.99.5-bin-hadoop200.tar.gz
+
+$ sudo mv sqoop-1.99.5-bin-hadoop200 /usr/local/sqoop
+
+$ sudo nano ~/.bashrc
+
+#----------------------------------------------------------------------------
+export SQOOP_HOME=/usr/local/sqoop
+export SQOOP_CONF_DIR=$SQOOP_HOME/conf
+export SQOOP_CLASS_PATH=$SQOOP_CONF_DIR
+export PATH=$SQOOP_HOME/bin:$PATH
+#----------------------------------------------------------------------------
+
+$ source ~/.bashrc
+
+$ sudo tar -zxvf mysql-connector-java-5.1.40.tar.gz
+
+$ sudo mv mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/local/sqoop/lib/
+
+$ sudo chmod 755 -R /usr/local/sqoop
+
+$ sqoop version
+
+# if it give some error, then check the ~/sqoop/lib directory
+# is that contain sqoop*.jar file or not
+# if not download it from net and copy in the ~/sqoop/lib directory
+
+$ sqoop help
+
+$ sqoop version

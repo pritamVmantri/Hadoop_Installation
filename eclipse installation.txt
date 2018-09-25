@@ -1,0 +1,29 @@
+# Download eclipse s/w 
+
+$ sudo tar -zxvf eclipse-jee-oxygen-M3-linux-gtk-x86_64.tar.gz
+
+$ sudo mv eclipse/ /usr/local/eclipse
+
+$ sudo nano /usr/share/app-install/desktop/eclipse-platform:eclipse.desktop
+
+#----------------------------------------------------------------------------
+# to create shortcut to launcher
+Type=Application
+Name=Eclipse
+Comment=Eclipse Integrated Development Environment
+Icon=/usr/local/eclipse/icon.xpm
+Exec=/usr/local/eclipse/eclipse
+Terminal=false
+Categories=Development;IDE;Java;
+StartupWMClass=Eclipse
+#----------------------------------------------------------------------------
+
+# to create a link to access eclipse directly
+
+$	sudo ln -s /usr/local/eclipse/eclipse /home/pritam/eclipse
+
+# you can access eclipse by one of the following methods by typing in terminal 
+
+$	eclipse
+# or -------
+$	./eclipse

@@ -1,0 +1,33 @@
+$ sudo apt-get update
+
+$ sudo apt-get install mysql-server
+
+# (Do you want to continue Y/N)
+        Y
+
+# New password for 'root' user
+        root                      # type your own password
+        
+$ sudo mysql_secure_installation
+
+# to access the root user
+
+$ mysql -u root -p
+
+# enter your password
+
+# now you can perform sql operation here or you can create another non-root user
+
+$ CREATE USER 'mynewuser'@'localhost' IDENTIFIED BY 'goodPassword';
+
+$ GRANT ALL PRIVILEGES ON * . * TO 'mynewuser'@'localhost';
+
+# to assign all privilages
+
+$ FLUSH PRIVILEGES;
+
+# reload the privilages
+
+$ mysql -u mynewuser -p
+
+# enter your password

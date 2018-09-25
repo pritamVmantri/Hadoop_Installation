@@ -1,0 +1,16 @@
+$ Download SBT http://www.scala-sbt.org/download.html
+
+$ sudo tar zxvf Desktop/software/hadoop/sbt-0.13.13.tgz
+
+$ sudo mv sbt-launcher-packaging-0.13.13/ /usr/local/sbt
+
+$ sudo nano ~/.bashrc
+
+#----------------------------------------------------------------------------
+export SBT_HOME=/usr/local/sbt
+export PATH=$SBT_HOME/bin:$PATH
+#----------------------------------------------------------------------------
+
+$ source ~/.bashrc
+
+$ sbt

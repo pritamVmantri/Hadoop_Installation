@@ -1,0 +1,26 @@
+$ sudo apt-get install ssh
+
+# Need a password to connect with any machine
+# to connect with same or local machine
+
+$ ssh localhost 
+
+	Password
+
+# But we require password each time when a 
+# service tries to connect this node through ssh.
+# For passwordless ssh setup
+# create a new ssh key pair
+
+$ ssh-keygen
+
+# Press only enter key i.e. be sure no password 
+# we need to copy our public key into the list of authorized keys
+
+$ cp .ssh/id_rsa.pub .ssh/authorized_keys
+
+# try to connect localhost
+
+$ ssh localhost
+
+# congracts, you have successfully installed.

@@ -1,0 +1,18 @@
+$ sudo tar -zxvf pig-0.14.0.tar.gz
+
+$ sudo mv pig-0.14.0 /usr/local/pig
+
+$ sudo nano ~/.bashrc
+
+#------------------------------------------------------------------------
+export PIG_HOME=/usr/local/pig
+export PIG_CONF_DIR=$PIG_HOME/conf
+export PIG_CLASS_PATH=$PIG_CONF_DIR
+export PATH=$PIG_HOME/bin:$PATH
+#------------------------------------------------------------------------
+
+$ source ~/.bashrc
+
+$ pig -h
+
+$ pig

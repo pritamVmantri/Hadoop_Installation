@@ -1,0 +1,39 @@
+# Download spring tool suite s/w 
+
+$ sudo tar -zxvf spring-tool-suite-3.9.0.RELEASE-e4.7.0-linux-gtk.tar.gz
+
+$ sudo mv sts/ /usr/local/sts
+
+$ sudo nano /usr/share/app-install/desktop/sts-platform:sts.desktop
+
+#----------------------------------------------------------------------------
+# to create shortcut to launcher
+Type=Application
+Name=sts
+Comment=Spring tool suite
+Icon=/usr/local/sts/sts-3.9.0.RELEASE/icon.xpm
+Exec=gksu /usr/local/sts/sts-3.9.0.RELEASE/sts
+Terminal=false
+Categories=Development;IDE;Java;
+StartupWMClass=Spring
+#----------------------------------------------------------------------------
+
+# to create a link to access eclipse directly
+
+$	sudo ln -s /usr/local/sts/sts-3.9.0.RELEASE/sts /home/pritam/sts
+
+sudo chmod a+x /home/pritam/sts
+
+# you can access eclipse by one of the following methods by typing in terminal 
+
+$	sts
+# or -------
+$	./sts
+
+$	Spring
+# or -------
+$	./Spring
+
+
+
+

@@ -1,0 +1,16 @@
+# download
+
+$ sudo tar -zxvf apache-cassandra-3.9-bin.tar.gz
+
+$ sudo mv pache-cassandra-3.9-bin/ /usr/local/cassandra
+
+$ sudo nano ~/.bashrc
+
+#------------------------------------------------------------------------
+export CASSANDRA_HOME=/home/pritam/apache-cassandra-3.9
+export PATH=$CASSANDRA_HOME/bin:$PATH
+# ------------------------------------------------------------------------------------
+
+$ source ~/.bashrc
+
+$ cassandra -v

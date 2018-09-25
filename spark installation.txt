@@ -1,0 +1,39 @@
+# Download scala-2.12.0.tgz from  http://spark.apache.org/downloads.html
+
+$ sudo tar xvf Desktop/software/hadoop/spark-2.0.2-bin-hadoop2.6.tar
+
+$ sudo mv spark-2.0.2-bin-hadoop2.6 /usr/local/spark
+
+$ sudo chown -R pritam:pritam spark
+
+#  --change ownership
+#  --update system variables
+#  --pritam is my system username
+
+$ sudo nano ~/.bashrc
+
+#----------------------------------------------------------------------------
+export SPARK_HOME=/usr/local/spark
+export PATH=$SPARK_HOME/bin:$PATH
+#----------------------------------------------------------------------------
+
+$ source ~/.bashrc
+
+$ cd $SPARK_HOME
+
+$ ./sbin/start-master.sh 
+
+#----------------------------------------------------------------------------
+remaining see in bookmarks for cluster
+#----------------------------------------------------------------------------
+
+# spark-shell
+
+scala> sc.version
+
+#----------------------------------------------------------------------------
+
+# pyspark
+
+# --python shell
+

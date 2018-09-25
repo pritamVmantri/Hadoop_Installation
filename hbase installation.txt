@@ -1,0 +1,18 @@
+$ sudo tar -zxvf hbase-1.2.4-bin.tar.gz
+
+$ sudo mv hbase-1.2.4 /usr/local/hbase
+
+$ sudo nano ~/.bashrc
+
+#----------------------------------------------------------------------------
+export HBASE_HOME=/usr/local/hbase
+export HBASE_CONF_DIR=$HBASE_HOME/conf
+export HBASE_CLASS_PATH=$HBASE_CONF_DIR
+export PATH=$HBASE_HOME/bin:$PATH
+#----------------------------------------------------------------------------
+
+$ source ~/.bashrc
+
+$ hbase version
+
+$ hbase shell

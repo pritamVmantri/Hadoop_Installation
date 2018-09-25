@@ -1,0 +1,133 @@
+# Upto Hadoop version 2.6 jdk 1.6 is enough
+# But onwards jdk 1.7 require 
+# to install Hadoop first prerequisites is Java must be installed  
+# Download hadoop-2.6.0.tar.gz or any stable Hadoop version
+
+# Unzip the hadoop distribution
+$ sudo tar -zxvf hadoop-2.6.0.tar.gz
+
+# You can use Hadoop local mode after unzipping the distribution. 
+# Now, you can run Hadoop jobs through bin/hadoop command
+# Hadoop local mode work on single JVM
+# The output and the behavior of the job is the same as a distributed mode
+
+
+
+
+
+
+$ sudo mv hadoop-2.6.0 /usr/local/hadoop
+
+# Include bin & sbin directories into path environment variable. 
+# So because of these setting we can access all the .sh files from 
+# terminal without rooting to hadoop directory.
+
+$ sudo nano ~/.bashrc
+
+#---------------------------------------------------------------------------- 
+export HADOOP_HOME="/usr/local/hadoop"
+export PATH=$PATH:$HADOOP_HOME/bin
+export PATH=$PATH:$HADOOP_HOME/sbin
+export HADOOP_MAPRED_HOME="$HADOOP_HOME"
+export HADOOP_COMMON_HOME="$HADOOP_HOME"
+export HADOOP_HDFS_HOME="$HADOOP_HOME"
+export YARN_HOME="$HADOOP_HOME"
+export HADOOP_COMMON_LIB_NATIVE_DIR="$HADOOP_HOME/lib/native"
+export HADOOP_OPTS="-Djava.library.path="$HADOOP_HOME/lib/native"
+export HADOOP_CONF_DIR="$HADOOP_HOME/etc/hadoop"
+export YARN_CONF_DIR="$HADOOP_HOME/etc/hadoop"
+#----------------------------------------------------------------------------
+
+$ source ~/.bashrc
+
+$ cd /usr/local/hadoop/etc/hadoop
+
+$ sudo nano hadoop-env.sh
+
+#----------------------------------------------------------------------------
+#The java implementation to use.
+export JAVA_HOME="/usr/local/java"
+#----------------------------------------------------------------------------
+
+# Configuring Hadoop
+
+$ sudo nano core-site.xml
+
+#----------------------------------------------------------------------------
+<configuration>
+	<property>
+		<name>fs.defaultFS</name>
+      <value>hdfs://localhost:9000</value>
+	</property>
+</configuration>
+#----------------------------------------------------------------------------
+
+$ sudo nano yarn-site.xml
+
+#----------------------------------------------------------------------------
+<configuration>
+	<property>
+   	<name>yarn.nodemanager.aux-services</name>
+      <value>mapreduce_shuffle</value>
+	</property>
+	<property>
+   	<name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+      <value> org.apache.hadoop.mapred.ShuffleHandler</value>
+	</property>
+</configuration>
+#----------------------------------------------------------------------------
+
+$ sudo cp mapred.site.xml.template mapred-site.xml
+
+$ sudo nano mapred-site.xml
+
+#----------------------------------------------------------------------------
+<configuration>
+	<property>
+   	<name>mapreduce.framework.name</name>
+      <value>yarn</value>
+	</property>
+</configuration>
+#----------------------------------------------------------------------------
+
+$ sudo nano hdfs-site.xml
+
+#----------------------------------------------------------------------------
+<configuration>
+	<property>
+   	<name>dfs.replication</name>
+      <value>1</value>
+	</property>
+   <property>
+   	<name>dfs.namenode.name.dir</name>
+      <value>file:/usr/local/hadoop/hadoop_data/hdfs/namenode</value>
+	</property>
+   <property>
+   	<name>dfs.datanode.data.dir</name>
+      <value>file:/usr/local/hadoop/hadoop_data/hdfs/datanode</value>
+	</property>
+</configuration>
+#----------------------------------------------------------------------------
+
+$ cd
+
+$ mkdir -p /usr/local/hadoop/hadoop_data/hdfs/namenode
+
+$ mkdir -p /usr/local/hadoop/hadoop_data/hdfs/datanode
+
+$ sudo chown pritam:pritam -R /usr/local/hadoop
+
+# pritam is an username
+
+$ hdfs namenode -format
+
+$ start-all.sh
+
+$ jps
+
+
+
+--http://localhost:8088/   --> Cluster details
+--http://localhost:50070/  --> Namenode details
+--http://localhost:50090/  --> Status of nodes
+--http://localhost:50075/  --> Datanode details
